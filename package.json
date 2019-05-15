@@ -21,7 +21,7 @@
     "ci": "CYPRESS_baseUrl=http://localhost:5000 CI=true npm-run-all -s lint jest build",
     "coverage": "npm run jest -- --coverage",
     "cy:built:ci": "start-server-and-test serve 5000 cy:ci:prod",
-    "cy:ci:prod": "CI=true cypress run --reporter mocha-spec-json-output-reporter --env TAGS='not @skip'",
+    "cy:ci:prod": "cypress run --reporter mocha-spec-json-output-reporter --env TAGS='not @skip'",
     "cy:ide": "APPLITOOLS_IS_DISABLED=true cypress open",
     "eyes-storybook": "eyes-storybook --storybook-static-dir storybook-static",
     "jest": "react-scripts test",
