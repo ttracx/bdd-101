@@ -1,5 +1,8 @@
-/* global Given, When, Then */
+/* eslint-disable no-unused-vars */
+/* global Given, When, Then, cy, And */
 import { Given, Then } from "cypress-cucumber-preprocessor/steps";
+// eslint-disable-next-line no-unused-vars
+const And = Then;
 
 const url = "http://localhost:3000";
 
@@ -10,18 +13,8 @@ Given("I visit the landing page", () => {
   cy.get('input#submit').should('exist');
 });
 
-When("I fill in signup details", () => {
-  cy.get('form')
-    .should('not.have.class', 'submitted')
+And("I should see the signup form", () => {
+  cy.get('#signup').should('exist');
+})
 
-  cy.get('input#name').type('blah')
-  cy.get('input#email').type('donkey@gmail.com').should('have.value', 'donkey@gmail.com')
-  cy.get('input#submit').click()
-  cy.get('form')
-      .should('have.class', 'submitted')
-});
-
-Then("I should see no validation issues", () => {
-  cy.get('#output').contains('Thank you for your submission')
-});
 

@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import posed from "react-pose"
+
 
 export class SignupForm extends React.Component {
   render() {
@@ -49,7 +49,9 @@ class App extends React.Component {
     submitted: false,
     confirmation: "Thank you for your submission"
   };
-  render() {
+  render () {
+
+    const { submitting, confirmation} = this.state;
     return (
       <Container
         css={{
@@ -74,7 +76,7 @@ class App extends React.Component {
         />
 
         <div id="output">
-          {this.state.submitting ? this.state.confirmation : ""}
+          {submitting ? confirmation : ""}
         </div>
       </Container>
     );
