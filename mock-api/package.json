@@ -1,0 +1,31 @@
+{
+  "name": "asos-dam-api",
+  "version": "0.0.1",
+  "description": "dam studios api",
+  "main": "convert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": " nodemon -w index.js -w openapi.yaml -w models -e js -e yaml"
+  },
+  "author": "Franz Sittampalam <franz.sittampalam@asos.com>",
+  "license": "ISC",
+  "dependencies": {
+    "api-spec-converter": "^2.7.11",
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
+    "chance": "^1.0.16",
+    "express": "^4.16.3",
+    "express-openapi-validate": "^0.4.3",
+    "http-proxy-middleware": "^0.19.0",
+    "js-yaml": "^3.12.0",
+    "json-schema-faker": "^0.5.0-rc15",
+    "moment": "^2.22.2",
+    "morgan": "^1.9.1",
+    "openapi-schema-validator": "^2.0.1",
+    "spectacle-docs": "^1.0.5",
+    "swagger-parser": "^5.0.5",
+    "swagger-ui-express": "^4.0.1",
+    "uuid": "^3.3.2"
+  }
+}

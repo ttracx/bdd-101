@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders Home Page 1`] = `
+<div
+  className="css-y4ox1m container"
+>
+  <form
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <input
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="email"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+  <div
+    id="output"
+  >
+    
+  </div>
+</div>
+`;
+
+exports[`<App /> should have error message field 1`] = `
+Object {
+  "email": "Invalid email address",
+}
+`;

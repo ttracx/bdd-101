@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image storyshots MessageList A list of messages 1`] = `
+<div
+  className="list-group"
+  data-test="message-list"
+  onKeyDown={[Function]}
+>
+  <div
+    className="list-group-item"
+    data-rb-event-key={null}
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span>
+      Reset password request
+    </span>
+  </div>
+  <div
+    className="list-group-item"
+    data-rb-event-key={null}
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span>
+      You have won a prize!!
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Image storyshots NotificationCentre NotificationCentre 1`] = `
+<div>
+  <button
+    className="btn btn-primary"
+    data-test="composeButton"
+    disabled={false}
+    type="button"
+  >
+    Compose
+  </button>
+  <div
+    className="list-group"
+    data-test="message-list"
+    onKeyDown={[Function]}
+  >
+    <div
+      className="list-group-item"
+      data-rb-event-key={null}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div
+      className="list-group-item"
+      data-rb-event-key={null}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <span>
+        2
+      </span>
+    </div>
+    <div
+      className="list-group-item"
+      data-rb-event-key={null}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <span>
+        3
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image storyshots Notifications A message 1`] = `
+<div
+  className="list-group-item"
+  disabled={false}
+  onClick={[Function]}
+>
+  <span>
+    Thank you for your email
+  </span>
+</div>
+`;
+
+exports[`Image storyshots Notifications A message with flag 1`] = `
+<div
+  className="list-group-item"
+  disabled={false}
+  onClick={[Function]}
+>
+  <span>
+    Important Message!
+  </span>
+  <span
+    className="badge badge-danger"
+  >
+    New
+  </span>
+</div>
+`;

@@ -1,0 +1,18 @@
+{
+  "name": "blog",
+  "version": 2,
+  "files": ["package.json", "src"],
+  "public": true,
+  "build":{
+    "env": {
+      "APPLITOOLS_API_KEY": "sDYsJRRhHuVyzkOcFJKPtDEkMaaf5G1D0Z101EGDT2Fus110"
+    }
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "ignoreTestFiles": "*.js",
+  "video": false,
+  "reporter": "mocha-spec-json-output-reporter",
+  "baseUrl":"http://localhost:3000"
+}

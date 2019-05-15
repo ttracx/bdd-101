@@ -1,0 +1,47 @@
+info:
+  description: API Describing Web Service X. This should run ok
+  title: PokerStars AP
+  version: 0.0.1
+openapi: 3.0.0
+servers:
+  - url: "127.0.0.1:5000"
+  - url: "pokerstars.com"
+paths:
+  /notifications/{gameId}:
+    get:
+      summary: receive game information
+      operationId: showGameInfo
+      tags:
+        - games
+      parameters:
+        - name: gameId
+          in: path
+          required: true
+          description: The id of the game to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                properties:
+                  gameId:
+                    type: string
+                    x-faker: random.uuid
+                  topPlayer:
+                    type: string
+                    x-faker: name.findName
+                  gameName:
+                    type: string
+                    x-faker: commerce.product
+                required:
+                  - gameId
+                  - gameName
+                  - topPlayer
+              example:
+                id: 10
+                name: Casino
+        default:
+          description: unexpected error

@@ -1,0 +1,99 @@
+{
+  "name": "workshop4",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.0",
+    "formik": "^1.5.4",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "react-dom": "^16.8.6",
+    "react-pose": "^4.0.8",
+    "react-scripts": "3.0.1"
+  },
+  "scripts": {
+    "build-storybook": "build-storybook -s public",
+    "build": "react-scripts build",
+    "ci": "CYPRESS_baseUrl=http://localhost:5000 CI=true npm-run-all -s lint jest build",
+    "coverage": "npm run jest -- --coverage",
+    "cy:built:ci": "start-server-and-test serve 5000 cy:ci:prod",
+    "cy:ci:prod": "CI=true cypress run --reporter mocha-spec-json-output-reporter --env TAGS='not @skip'",
+    "cy:ide": "APPLITOOLS_IS_DISABLED=true cypress open",
+    "eyes-storybook": "eyes-storybook --storybook-static-dir storybook-static",
+    "jest": "react-scripts test",
+    "lint": "./node_modules/eslint/bin/eslint.js src",
+    "now-build": "CI=true npm run ci",
+    "prepush": "CYPRESS_failCypressOnDiff=true CYPRESS_baseUrl=http://localhost:5000 CI=true npm-run-all -s build cy:built:ci visual",
+    "serve": "PORT=5000 http-server build",
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 9009 -s public",
+    "visual": "npm run build-storybook && eyes-storybook"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "CI=true npm-run-all -s lint jest",
+      "pre-push": "CI=true CYPRESS_baseUrl=http://localhost:5000  CI=true npm-run-all -s build cy:built:ci",
+      "optional": "APPLITOOLS_IS_DISABLED=true"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/.storybook/"
+    ]
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@applitools/eyes-cypress": "^3.6.13",
+    "@applitools/eyes-storybook": "^2.6.18",
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addon-storyshots": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "@types/jest": "^24.0.12",
+    "@types/node": "^12.0.1",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "chokidar-cli": "^1.2.2",
+    "cypress": "^3.2.0",
+    "cypress-cucumber-preprocessor": "^1.11.0",
+    "cypress-healthcheck": "https://github.com/bdimitrovski/cypress-healthcheck.git",
+    "git-repo-info": "^2.1.0",
+    "http-server": "^0.11.1",
+    "husky": "^2.2.0",
+    "mocha-spec-json-output-reporter": "^1.1.6",
+    "npm-run-all": "^4.1.5",
+    "react-test-renderer": "^16.8.6",
+    "require-context.macro": "^1.0.4",
+    "slack-notify": "^0.1.7",
+    "start-server-and-test": "^1.9.0",
+    "typescript": "^3.4.5"
+  }
+}
